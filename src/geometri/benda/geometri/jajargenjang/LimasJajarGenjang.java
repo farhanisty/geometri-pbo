@@ -2,17 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package geometri.benda.geometri;
+package geometri.benda.geometri.jajargenjang;
+
+import geometri.benda.geometri.jajargenjang.JajarGenjang;
 
 /**
  *
  * @author farhannivta
  */
-public class LimasPersegi extends Persegi{
+public class LimasJajarGenjang extends JajarGenjang{
     public double tinggiLimas;
     
-    public LimasPersegi(double tinggiLimas, double sisi) {
-        super(sisi);
+    public LimasJajarGenjang(double tinggiLimas, double sisiDatar, double sisiMiring, double tinggi) {
+        super(sisiDatar, sisiMiring, tinggi);
         this.tinggiLimas = tinggiLimas;
     }
      public double hitungVolume() {
@@ -21,6 +23,7 @@ public class LimasPersegi extends Persegi{
     
     @Override
     public String getNama() {
-        return "Limas Persegi";
+        return "Limas Jajar Genjang";
     }
+    
 }

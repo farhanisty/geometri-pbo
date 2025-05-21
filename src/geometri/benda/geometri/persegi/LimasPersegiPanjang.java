@@ -2,26 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package geometri.benda.geometri;
+package geometri.benda.geometri.persegi;
+
+import geometri.benda.geometri.persegi.PersegiPanjang;
 
 /**
  *
  * @author farhannivta
  */
-public class LimasBelahKetupat extends BelahKetupat{
+public class LimasPersegiPanjang extends PersegiPanjang{
     public double tinggiLimas;
-
-    public LimasBelahKetupat(double tinggiLimas, double sisi, double diagonalSatu, double diagonalDua) {
-        super(sisi, diagonalSatu, diagonalDua);
+    
+    public LimasPersegiPanjang(double tinggiLimas, double sisiPendek, double sisiPanjang) {
+        super(sisiPendek, sisiPanjang);
         this.tinggiLimas = tinggiLimas;
     }
-     public double hitungVolume() {
+    
+    public double hitungVolume() {
         return this.tinggiLimas * this.hitungLuas() / 3;
     }
     
     @Override
     public String getNama() {
-        return "Limas Belah Ketupat";
+        return "Limas Persegi Panjang";
+
     }
     
 }

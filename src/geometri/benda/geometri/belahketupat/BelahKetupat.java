@@ -2,22 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package geometri.benda.geometri;
+package geometri.benda.geometri.belahketupat;
+
+import geometri.benda.geometri.BangunDatar;
 
 /**
  *
  * @author farhannivta
  */
-public class Persegi extends BangunDatar {
-
+public class BelahKetupat extends BangunDatar {
     public double sisi;
+    public double diagonalSatu;
+    public double diagonalDua;
     
-    public Persegi(double sisi) {
+    public BelahKetupat(double sisi, double diagonalSatu, double diagonalDua) {
         this.sisi = sisi;
+        this.diagonalDua = diagonalDua;
+        this.diagonalSatu = diagonalSatu;
     }
+
     @Override
     public double hitungLuas() {
-        return this.sisi * this.sisi;
+        return this.diagonalSatu * this.diagonalDua / 2;
     }
 
     @Override
@@ -27,7 +33,7 @@ public class Persegi extends BangunDatar {
 
     @Override
     public String getNama() {
-        return "Persegi";
+        return "Belah Ketupat";
     }
     
 }

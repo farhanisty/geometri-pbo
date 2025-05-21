@@ -2,17 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package geometri.benda.geometri;
+package geometri.benda.geometri.layanglayang;
+
+import geometri.benda.geometri.layanglayang.LayangLayang;
 
 /**
  *
  * @author farhannivta
  */
-public class LimasPersegiPanjang extends PersegiPanjang{
+public class LimasLayangLayang extends LayangLayang{
     public double tinggiLimas;
-    
-    public LimasPersegiPanjang(double tinggiLimas, double sisiPendek, double sisiPanjang) {
-        super(sisiPendek, sisiPanjang);
+
+    public LimasLayangLayang(double tinggiLimas, double tinggiLayangLayang, double diagonalSatu, double diagonalDua, double sisiPendek, double sisiPanjang) {
+        super(diagonalSatu, diagonalDua, sisiPendek, sisiPanjang);
         this.tinggiLimas = tinggiLimas;
     }
     
@@ -22,8 +24,7 @@ public class LimasPersegiPanjang extends PersegiPanjang{
     
     @Override
     public String getNama() {
-        return "Limas Persegi Panjang";
-
+        return "Limas Layang Layang";
     }
     
 }

@@ -2,26 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package geometri.benda.geometri;
+package geometri.benda.geometri.persegi;
+
+import geometri.benda.geometri.persegi.PersegiPanjang;
 
 /**
  *
  * @author farhannivta
  */
-public class PrismaLayangLayang extends LayangLayang{
+public class PrismaPersegiPanjang extends PersegiPanjang{
     public double tinggiPrisma;
     
-    public PrismaLayangLayang(double tinggiPrisma, double diagonalSatu, double diagonalDua, double sisiPendek, double sisiPanjang) {
-        super(diagonalSatu, diagonalDua, sisiPendek, sisiPanjang);
+    public PrismaPersegiPanjang(double tinggiPrisma, double sisiPendek, double sisiPanjang) {
+        super(sisiPendek, sisiPanjang);
         this.tinggiPrisma = tinggiPrisma;
     }
-    public double hitungVolume() {
+     public double hitungVolume() {
         return this.hitungLuas() * this.tinggiPrisma;
     }
     
     @Override
     public String getNama() {
-        return "Prisma Layang Layang";
+        return "Prisma Persegi Panjang";
     }
-    
 }

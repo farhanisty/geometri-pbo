@@ -21,7 +21,7 @@ public class LimasJajarGenjang extends JajarGenjang{
     
     @Override
     public String getNama() {
-        return "Limas Persegi";
+        return "Limas Jajar Genjang";
     }
     
 }

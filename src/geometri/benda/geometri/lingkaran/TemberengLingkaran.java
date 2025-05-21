@@ -9,7 +9,7 @@ package geometri.benda.geometri.lingkaran;
  * @author farhannivta
  */
 public class TemberengLingkaran extends Lingkaran {
-    private double sudutTheta;
+    public double sudutTheta;
     
     public TemberengLingkaran(double jariJari, double sudutTheta) {
         super(jariJari);

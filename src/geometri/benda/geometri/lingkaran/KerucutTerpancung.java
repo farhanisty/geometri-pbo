@@ -9,8 +9,8 @@ package geometri.benda.geometri.lingkaran;
  * @author farhannivta
  */
 public class KerucutTerpancung extends Lingkaran {
-    private double jariJariKecil;
-    private double tinggi;
+    public double jariJariKecil;
+    public double tinggi;
 
     public KerucutTerpancung(double tinggi, double jariJariKecil, double jariJariBesar) {
         super(jariJariBesar);

@@ -1,27 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package geometri.benda.geometri.belahketupat;
-
-/**
- *
- * @author farhannivta
- */
-public class LimasBelahKetupat extends BelahKetupat{
+public class LimasBelahKetupat extends BelahKetupat {
     public double tinggiLimas;
+    public double tinggiSegitigaSisi;
 
-    public LimasBelahKetupat(double tinggiLimas, double sisi, double diagonalSatu, double diagonalDua) {
+    public LimasBelahKetupat(double tinggiLimas, double sisi, double diagonalSatu, double diagonalDua, double tinggiSegitigaSisi) {
         super(sisi, diagonalSatu, diagonalDua);
         this.tinggiLimas = tinggiLimas;
+        this.tinggiSegitigaSisi = tinggiSegitigaSisi;
     }
-     public double hitungVolume() {
-        return this.tinggiLimas * this.hitungLuas() / 3;
+
+    public double hitungVolume() {
+        return super.hitungLuas() * this.tinggiLimas / 3;
     }
-    
+
+
+    @Override
+    public double hitungLuas() {
+        double luasAlas = super.hitungLuas();
+        double luasSisiSamping = 4 * (0.5 * this.sisi * this.tinggiSegitigaSisi);
+        return luasAlas + luasSisiSamping;
+    }
+
     @Override
     public String getNama() {
         return "Limas Belah Ketupat";
     }
-    
 }

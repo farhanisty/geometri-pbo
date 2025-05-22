@@ -1,27 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package geometri.benda.geometri.segitiga;
-
-import geometri.benda.geometri.segitiga.Segitiga;
-
-/**
- *
- * @author farhannivta
- */
 public class LimasSegitiga extends Segitiga {
     public double tinggiLimas;
-    
-    public LimasSegitiga(double tinggiLimas, double sisiSatu, double sisiDua, double sisiAlas, double tinggi) {
+    public double tinggiSegitigaSisiSatu;
+    public double tinggiSegitigaSisiDua;
+    public double tinggiSegitigaSisiAlas;
+
+    public LimasSegitiga(double tinggiLimas, double sisiSatu, double sisiDua, double sisiAlas, double tinggi,
+                         double tinggiSegitigaSisiSatu, double tinggiSegitigaSisiDua, double tinggiSegitigaSisiAlas) {
         super(sisiSatu, sisiDua, sisiAlas, tinggi);
         this.tinggiLimas = tinggiLimas;
+        this.tinggiSegitigaSisiSatu = tinggiSegitigaSisiSatu;
+        this.tinggiSegitigaSisiDua = tinggiSegitigaSisiDua;
+        this.tinggiSegitigaSisiAlas = tinggiSegitigaSisiAlas;
     }
-    
+
     public double hitungVolume() {
-        return this.tinggiLimas * this.hitungLuas() / 3;
+        return this.hitungLuas() * this.tinggiLimas / 3;
     }
-    
+
+    @Override
+    public double hitungLuas() {
+        double luasAlas = super.hitungLuas();
+        double luasSisiSatu = 0.5 * sisiSatu * tinggiSegitigaSisiSatu;
+        double luasSisiDua = 0.5 * sisiDua * tinggiSegitigaSisiDua;
+        double luasSisiAlas = 0.5 * sisiAlas * tinggiSegitigaSisiAlas;
+        return luasAlas + luasSisiSatu + luasSisiDua + luasSisiAlas;
+    }
+
     @Override
     public String getNama() {
         return "Limas Segitiga";

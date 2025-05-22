@@ -1,30 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package geometri.benda.geometri.trapesium;
-
-import geometri.benda.geometri.trapesium.Trapesium;
-
-/**
- *
- * @author farhannivta
- */
-public class LimasTrapesium extends Trapesium{
+public class LimasTrapesium extends Trapesium {
     public double tinggiLimas;
-    
-    public LimasTrapesium(double tinggiLimas, double sisiAtas, double sisiAlas, double sisiMiringSatu, double sisiMiringDua, double tinggi) {
+    public double tinggiSegitigaSisiAtas;
+    public double tinggiSegitigaSisiAlas;
+    public double tinggiSegitigaSisiMiringSatu;
+    public double tinggiSegitigaSisiMiringDua;
+
+    public LimasTrapesium(double tinggiLimas, double sisiAtas, double sisiAlas,
+                          double sisiMiringSatu, double sisiMiringDua, double tinggi,
+                          double tinggiSegitigaSisiAtas, double tinggiSegitigaSisiAlas,
+                          double tinggiSegitigaSisiMiringSatu, double tinggiSegitigaSisiMiringDua) {
         super(sisiAtas, sisiAlas, sisiMiringSatu, sisiMiringDua, tinggi);
         this.tinggiLimas = tinggiLimas;
+        this.tinggiSegitigaSisiAtas = tinggiSegitigaSisiAtas;
+        this.tinggiSegitigaSisiAlas = tinggiSegitigaSisiAlas;
+        this.tinggiSegitigaSisiMiringSatu = tinggiSegitigaSisiMiringSatu;
+        this.tinggiSegitigaSisiMiringDua = tinggiSegitigaSisiMiringDua;
     }
-    
+
     public double hitungVolume() {
-        return this.tinggiLimas * this.hitungLuas() / 3;
+        return this.hitungLuas() * this.tinggiLimas / 3;
     }
-    
+
+    @Override
+    public double hitungLuas() {
+        double luasAlas = super.hitungLuas();
+        double luasSisiAtas = 0.5 * sisiAtas * tinggiSegitigaSisiAtas;
+        double luasSisiAlas = 0.5 * sisiAlas * tinggiSegitigaSisiAlas;
+        double luasSisiMiringSatu = 0.5 * sisiMiringSatu * tinggiSegitigaSisiMiringSatu;
+        double luasSisiMiringDua = 0.5 * sisiMiringDua * tinggiSegitigaSisiMiringDua;
+        return luasAlas + luasSisiAtas + luasSisiAlas + luasSisiMiringSatu + luasSisiMiringDua;
+    }
+
     @Override
     public String getNama() {
         return "Limas Trapesium";
     }
-    
 }

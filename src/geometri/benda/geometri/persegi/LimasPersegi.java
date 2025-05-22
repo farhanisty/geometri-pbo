@@ -1,26 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package geometri.benda.geometri.persegi;
-
-import geometri.benda.geometri.persegi.Persegi;
-
-/**
- *
- * @author farhannivta
- */
-public class LimasPersegi extends Persegi{
+public class LimasPersegi extends Persegi {
     public double tinggiLimas;
-    
-    public LimasPersegi(double tinggiLimas, double sisi) {
+    public double tinggiSegitiga;
+
+    public LimasPersegi(double tinggiLimas, double sisi, double tinggiSegitiga) {
         super(sisi);
         this.tinggiLimas = tinggiLimas;
+        this.tinggiSegitiga = tinggiSegitiga;
     }
-     public double hitungVolume() {
-        return this.tinggiLimas * this.hitungLuas() / 3;
+
+    public double hitungVolume() {
+        return this.hitungLuas() * this.tinggiLimas / 3;
     }
-    
+
+    @Override
+    public double hitungLuas() {
+        double luasAlas = super.hitungLuas();
+        double luasSisi = 4 * (0.5 * sisi * tinggiSegitiga);
+        return luasAlas + luasSisi;
+    }
+
     @Override
     public String getNama() {
         return "Limas Persegi";

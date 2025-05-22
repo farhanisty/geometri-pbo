@@ -1,27 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package geometri.benda.geometri.segitiga;
-
-import geometri.benda.geometri.segitiga.Segitiga;
-
-/**
- *
- * @author farhannivta
- */
 public class PrismaSegitiga extends Segitiga {
     public double tinggiPrisma;
-    
-    public PrismaSegitiga(double tinggi, double sisiSatu, double sisiDua, double sisiAlas, double tinggiSegitiga) {
-        super(sisiSatu,sisiDua, sisiAlas, tinggiSegitiga);
-        this.tinggiPrisma = tinggi;
+
+    public PrismaSegitiga(double tinggiPrisma, double sisiSatu, double sisiDua, double sisiAlas, double tinggiSegitiga) {
+        super(sisiSatu, sisiDua, sisiAlas, tinggiSegitiga);
+        this.tinggiPrisma = tinggiPrisma;
     }
-    
+
     public double hitungVolume() {
-        return this.hitungLuas() * this.tinggiPrisma;
+        return super.hitungLuas() * this.tinggiPrisma;
     }
-    
+
+
+    @Override
+    public double hitungLuas() {
+        return 2 * super.hitungLuas() + super.hitungKeliling() * this.tinggiPrisma;
+    }
+
     @Override
     public String getNama() {
         return "Prisma Segitiga";

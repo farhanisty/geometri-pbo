@@ -1,3 +1,8 @@
+package geometri.benda.geometri.trapesium;
+
+import geometri.benda.geometri.BangunDatar;
+
+
 public class LimasTrapesium extends Trapesium {
     public double tinggiLimas;
     public double tinggiSegitigaSisiAtas;

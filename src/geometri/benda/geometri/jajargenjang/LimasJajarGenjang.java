@@ -1,3 +1,7 @@
+package geometri.benda.geometri.jajargenjang;
+
+import geometri.benda.geometri.BangunDatar;
+
 public class LimasJajarGenjang extends JajarGenjang {
     public double tinggiLimas;
     public double tinggiSegitigaSisiDatar;

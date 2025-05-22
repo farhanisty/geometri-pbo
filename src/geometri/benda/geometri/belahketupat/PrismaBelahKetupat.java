@@ -1,3 +1,7 @@
+package geometri.benda.geometri.belahketupat;
+
+import geometri.benda.geometri.BangunDatar;
+
 public class PrismaBelahKetupat extends BelahKetupat {
     public double tinggiPrisma;
 

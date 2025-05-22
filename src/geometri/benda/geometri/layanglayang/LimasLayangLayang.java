@@ -1,3 +1,7 @@
+package geometri.benda.geometri.layanglayang;
+
+import geometri.benda.geometri.BangunDatar;
+
 public class LimasLayangLayang extends LayangLayang {
     public double tinggiLimas;
     public double tinggiSegitigaSisiPendek;

@@ -1,3 +1,7 @@
+package geometri.benda.geometri.layanglayang;
+
+import geometri.benda.geometri.BangunDatar;
+
 public class PrismaLayangLayang extends LayangLayang {
     public double tinggiPrisma;
 

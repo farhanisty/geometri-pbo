@@ -1,3 +1,7 @@
+package geometri.benda.geometri.persegi;
+
+import geometri.benda.geometri.BangunDatar;
+
 public class LimasPersegiPanjang extends PersegiPanjang {
     public double tinggiLimas;
     public double tinggiSegitigaSisiPendek;

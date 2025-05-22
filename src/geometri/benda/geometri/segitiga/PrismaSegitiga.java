@@ -1,3 +1,8 @@
+package geometri.benda.geometri.segitiga;
+
+import geometri.benda.geometri.BangunDatar;
+
+
 public class PrismaSegitiga extends Segitiga {
     public double tinggiPrisma;
 

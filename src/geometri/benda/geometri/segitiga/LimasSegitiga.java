@@ -1,3 +1,8 @@
+package geometri.benda.geometri.segitiga;
+
+import geometri.benda.geometri.BangunDatar;
+
+
 public class LimasSegitiga extends Segitiga {
     public double tinggiLimas;
     public double tinggiSegitigaSisiSatu;

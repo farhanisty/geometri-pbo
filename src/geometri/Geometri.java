@@ -152,6 +152,22 @@ public class Geometri {
     public static void menuBangunRuang(Scanner input) {
         System.out.println("\n=== MENU BANGUN RUANG ===");
         System.out.println("1. Prisma Segitiga");
+        System.out.println("2. Limas Segitiga");
+        System.out.println("3. Prisma Persegi");
+        System.out.println("4. Limas Persegi");
+        System.out.println("5. Prisma Jajar Genjang");
+        System.out.println("6. Limas Jajar Genjang");
+        System.out.println("7. Prisma Trapesium");
+        System.out.println("8. Limas Trapesium");
+        System.out.println("9. Prisma Belah Ketupat");
+        System.out.println("10. Limas Belah Ketupat");
+        System.out.println("11. Prisma Layang Layang");
+        System.out.println("12. Limas Layang Layang");
+        System.out.println("13. Tabung");
+        System.out.println("14. Kerucut");
+        
+        
+        
         System.out.print("Pilih bangun ruang (1): ");
         int pilihan = input.nextInt();
         boolean kembali;

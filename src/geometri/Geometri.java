@@ -4,8 +4,15 @@
  */
 package geometri;
 
-
 import java.util.Scanner;
+import geometri.benda.geometri.segitiga.*;
+import geometri.benda.geometri.persegi.*;
+import geometri.benda.geometri.jajargenjang.*;
+import geometri.benda.geometri.trapesium.*;
+import geometri.benda.geometri.belahketupat.*;
+import geometri.benda.geometri.layanglayang.*;
+import geometri.benda.geometri.lingkaran.*;
+import geometri.benda.geometri.lingkaran.bola.*;
 /**
  *
  * @author farhannivta
@@ -50,9 +57,16 @@ public class Geometri {
     public static void menuBangunDatar(Scanner input) {
         System.out.println("\n=== MENU BANGUN DATAR ===");
         System.out.println("1. Segitiga");
-        // Tambahkan opsi lain di sini
-        System.out.print("Pilih bangun datar (1): ");
+        System.out.println("2. Persegi");
+        System.out.println("3. Persegi Panjang");
+        System.out.println("4. Jajar Genjang");
+        System.out.println("5. Trapesium");
+        System.out.println("6. Belah Ketupat");
+        System.out.println("7. Layang Layang");
+        System.out.println("8. Lingkaran");
+        System.out.print("Pilih bangun datar (1-8): ");
         int pilihan = input.nextInt();
+        boolean kembali;
 
         switch (pilihan) {
             case 1:
@@ -66,11 +80,70 @@ public class Geometri {
                 double tinggi = input.nextDouble();
 
                 Segitiga segitiga = new Segitiga(sisi1, sisi2, alas, tinggi);
-                System.out.println("Nama: " + segitiga.getNama());
-                System.out.println("Luas: " + segitiga.hitungLuas());
-                System.out.println("Keliling: " + segitiga.hitungKeliling());
+                
+                kembali = false;
+                while(!kembali) {
+                    System.out.println("\n=== MENU SEGITIGA ===");
+                    System.out.println("1. Tampilkan Nama");
+                    System.out.println("2. Hitung Luas");
+                    System.out.println("3. Hitung Keliling");
+                    System.out.println("4. Kembali");
+                    System.out.print("Pilih menu (1-4): ");
+                    int subPilihan = input.nextInt();
+                    
+                    switch (subPilihan) {
+                        case 1:
+                            System.out.println("Nama: " + segitiga.getNama());
+                            break;
+                        case 2:
+                            System.out.println("Luas: " + segitiga.hitungLuas());
+                            break;
+                        case 3:
+                            System.out.println("Keliling: " + segitiga.hitungKeliling());
+                            break;
+                        case 4:
+                            kembali = true;
+                            break;
+                        default:
+                            System.out.println("Pilihan tidak valid.");
+                    }
+                }
                 break;
-            // Tambahkan case 2 - 10 sesuai dengan bangun datar lainnya
+            case 2:
+                System.out.println("Masukkan sisi:");
+                double sisi = input.nextDouble();
+                
+                Persegi persegi = new Persegi(sisi);
+                
+                kembali = false;
+                while(!kembali) {
+                    System.out.println("\n=== MENU SEGITIGA ===");
+                    System.out.println("1. Tampilkan Nama");
+                    System.out.println("2. Hitung Luas");
+                    System.out.println("3. Hitung Keliling");
+                    System.out.println("4. Kembali");
+                    System.out.print("Pilih menu (1-4): ");
+                    int subPilihan = input.nextInt();
+                    
+                    switch (subPilihan) {
+                        case 1:
+                            System.out.println("Nama: " + persegi.getNama());
+                            break;
+                        case 2:
+                            System.out.println("Luas: " + persegi.hitungLuas());
+                            break;
+                        case 3:
+                            System.out.println("Keliling: " + persegi.hitungKeliling());
+                            break;
+                        case 4:
+                            kembali = true;
+                            break;
+                        default:
+                            System.out.println("Pilihan tidak valid.");
+                    }
+                }
+                break;
+            
             default:
                 System.out.println("Pilihan tidak valid.");
         }
@@ -79,9 +152,9 @@ public class Geometri {
     public static void menuBangunRuang(Scanner input) {
         System.out.println("\n=== MENU BANGUN RUANG ===");
         System.out.println("1. Prisma Segitiga");
-        // Tambahkan opsi lainnya di sini
         System.out.print("Pilih bangun ruang (1): ");
         int pilihan = input.nextInt();
+        boolean kembali;
 
         switch (pilihan) {
             case 1:
@@ -97,11 +170,34 @@ public class Geometri {
                 double tinggiPrisma = input.nextDouble();
 
                 PrismaSegitiga prisma = new PrismaSegitiga(tinggiPrisma, sisi1, sisi2, alas, tinggiSegitiga);
-                System.out.println("Nama: " + prisma.getNama());
-                System.out.println("Volume: " + prisma.hitungVolume());
-                System.out.println("Luas Permukaan: " + prisma.hitungLuas());
+                kembali = false;
+                while(!kembali) {
+                    System.out.println("\n=== MENU PRISMA SEGITIGA ===");
+                    System.out.println("1. Tampilkan Nama");
+                    System.out.println("2. Hitung Volume");
+                    System.out.println("3. Hitung Luas Permukaan");
+                    System.out.println("4. Kembali");
+                    System.out.print("Pilih menu (1-4): ");
+                    int subPilihan = input.nextInt();
+
+                    switch (subPilihan) {
+                        case 1:
+                            System.out.println("Nama: " + prisma.getNama());
+                            break;
+                        case 2:
+                            System.out.println("Volume: " + prisma.hitungVolume());
+                            break;
+                        case 3:
+                            System.out.println("Luas Permukaan: " + prisma.hitungLuas());
+                            break;
+                        case 4:
+                            kembali = true;
+                            break;
+                        default:
+                            System.out.println("Pilihan tidak valid.");
+                    }
+                }
                 break;
-            // Tambahkan case 2 - 21 sesuai dengan bangun ruang lainnya
             default:
                 System.out.println("Pilihan tidak valid.");
         }

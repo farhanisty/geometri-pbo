@@ -451,6 +451,9 @@ public class Geometri {
                 }
             }
         }
+        else {
+            System.out.println("Pilihan tidak valid.");
+        }
     }
 
     public static void menuBangunRuang(Scanner input) {
@@ -1156,13 +1159,13 @@ public class Geometri {
 
                 switch (subPilihan) {
                     case 1:
-                        System.out.println("Nama: " + kerucut.getNama());
+                        System.out.println("Nama: " + bola.getNama());
                         break;
                     case 2:
-                        System.out.println("Volume: " + kerucut.hitungVolume());
+                        System.out.println("Volume: " + bola.hitungVolume());
                         break;
                     case 3:
-                        System.out.println("Luas Permukaan: " + tabung.hitungLuas());
+                        System.out.println("Luas Permukaan: " + bola.hitungLuas());
                         break;
                     case 4:
                         kembali = true;

@@ -68,84 +68,307 @@ public class Geometri {
         int pilihan = input.nextInt();
         boolean kembali;
 
-        switch (pilihan) {
-            case 1:
-                System.out.print("Masukkan sisi 1: ");
-                double sisi1 = input.nextDouble();
-                System.out.print("Masukkan sisi 2: ");
-                double sisi2 = input.nextDouble();
-                System.out.print("Masukkan sisi alas: ");
-                double alas = input.nextDouble();
-                System.out.print("Masukkan tinggi: ");
-                double tinggi = input.nextDouble();
+        if (pilihan == 1) {
+            System.out.print("Masukkan sisi 1: ");
+            double sisi1 = input.nextDouble();
+            System.out.print("Masukkan sisi 2: ");
+            double sisi2 = input.nextDouble();
+            System.out.print("Masukkan sisi alas: ");
+            double alas = input.nextDouble();
+            System.out.print("Masukkan tinggi: ");
+            double tinggi = input.nextDouble();
 
-                Segitiga segitiga = new Segitiga(sisi1, sisi2, alas, tinggi);
-                
-                kembali = false;
-                while(!kembali) {
-                    System.out.println("\n=== MENU SEGITIGA ===");
-                    System.out.println("1. Tampilkan Nama");
-                    System.out.println("2. Hitung Luas");
-                    System.out.println("3. Hitung Keliling");
-                    System.out.println("4. Kembali");
-                    System.out.print("Pilih menu (1-4): ");
-                    int subPilihan = input.nextInt();
-                    
-                    switch (subPilihan) {
-                        case 1:
-                            System.out.println("Nama: " + segitiga.getNama());
-                            break;
-                        case 2:
-                            System.out.println("Luas: " + segitiga.hitungLuas());
-                            break;
-                        case 3:
-                            System.out.println("Keliling: " + segitiga.hitungKeliling());
-                            break;
-                        case 4:
-                            kembali = true;
-                            break;
-                        default:
-                            System.out.println("Pilihan tidak valid.");
-                    }
+            Segitiga segitiga = new Segitiga(sisi1, sisi2, alas, tinggi);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU SEGITIGA ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + segitiga.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + segitiga.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + segitiga.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
                 }
-                break;
-            case 2:
-                System.out.println("Masukkan sisi:");
-                double sisi = input.nextDouble();
-                
-                Persegi persegi = new Persegi(sisi);
-                
-                kembali = false;
-                while(!kembali) {
-                    System.out.println("\n=== MENU SEGITIGA ===");
-                    System.out.println("1. Tampilkan Nama");
-                    System.out.println("2. Hitung Luas");
-                    System.out.println("3. Hitung Keliling");
-                    System.out.println("4. Kembali");
-                    System.out.print("Pilih menu (1-4): ");
-                    int subPilihan = input.nextInt();
-                    
-                    switch (subPilihan) {
-                        case 1:
-                            System.out.println("Nama: " + persegi.getNama());
-                            break;
-                        case 2:
-                            System.out.println("Luas: " + persegi.hitungLuas());
-                            break;
-                        case 3:
-                            System.out.println("Keliling: " + persegi.hitungKeliling());
-                            break;
-                        case 4:
-                            kembali = true;
-                            break;
-                        default:
-                            System.out.println("Pilihan tidak valid.");
-                    }
+            }
+        }
+        else if (pilihan == 2) {
+            System.out.println("Masukkan sisi:");
+            double sisi = input.nextDouble();
+
+            Persegi persegi = new Persegi(sisi);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU PERSEGI ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + persegi.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + persegi.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + persegi.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
                 }
-                break;
+            }
+        }
+        else if (pilihan == 3) {
+            System.out.println("Masukkan sisi pendek:");
+            double sisiPendek = input.nextDouble();
+            System.out.println("Masukkan sisi panjang:");
+            double sisiPanjang = input.nextDouble();
+
+            PersegiPanjang persegipanjang = new PersegiPanjang(sisiPendek, sisiPanjang);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU PERSEGI PANJANG ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + persegipanjang.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + persegipanjang.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + persegipanjang.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
+        }
+        else if (pilihan == 4) {
+            System.out.println("Masukkan sisi datar:");
+            double sisiDatar = input.nextDouble();
+            System.out.println("Masukkan sisi miring:");
+            double sisiMiring = input.nextDouble();
+            System.out.println("Masukkan tinggi:");
+            double tinggi = input.nextDouble();
+
+            JajarGenjang jajargenjang = new JajarGenjang(sisiDatar, sisiMiring, tinggi);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU JAJAR GENJANG ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + jajargenjang.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + jajargenjang.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + jajargenjang.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
+        }
+        else if (pilihan == 5) {
+            System.out.println("Masukkan sisi miring satu:");
+            double sisiMiringSatu = input.nextDouble();
+            System.out.println("Masukkan sisi miring dua:");
+            double sisiMiringDua = input.nextDouble();
+            System.out.println("Masukkan sisi alas:");
+            double sisiAlas = input.nextDouble();
+            System.out.println("Masukkan sisi atas:");
+            double sisiAtas = input.nextDouble();
+            System.out.println("Masukkan tinggi:");
+            double tinggi = input.nextDouble();
+
+            Trapesium trapesium = new Trapesium(sisiAtas, sisiAlas, sisiMiringSatu, sisiMiringDua, tinggi);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU TRAPESIUM ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + trapesium.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + trapesium.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + trapesium.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
+        }
+        else if (pilihan == 6) {
+            System.out.println("Masukkan diagonal satu:");
+            double diagonalSatu = input.nextDouble();
+            System.out.println("Masukkan diagonal dua:");
+            double diagonalDua = input.nextDouble();
+            System.out.println("Masukkan sisi:");
+            double sisi = input.nextDouble();
             
-            default:
-                System.out.println("Pilihan tidak valid.");
+            BelahKetupat belahketupat = new BelahKetupat(sisi, diagonalSatu, diagonalDua);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU BELAH KETUPAT ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + belahketupat.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + belahketupat.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + belahketupat.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
+        }
+        else if (pilihan == 7) {
+            System.out.println("Masukkan diagonal satu:");
+            double diagonalSatu = input.nextDouble();
+            System.out.println("Masukkan diagonal dua:");
+            double diagonalDua = input.nextDouble();
+            System.out.println("Masukkan sisi pendek:");
+            double sisiPendek = input.nextDouble();
+            System.out.println("Masukkan sisi panjang:");
+            double sisiPanjang = input.nextDouble();
+            
+            LayangLayang layanglayang = new LayangLayang(diagonalSatu, diagonalDua, sisiPendek, sisiPanjang);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU LAYANG-LAYANG ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + layanglayang.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + layanglayang.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + layanglayang.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
+        }
+        else if (pilihan == 8) {
+            System.out.println("Masukkan jari-jari:");
+            double jariJari = input.nextDouble();
+            
+            Lingkaran lingkaran = new Lingkaran(jariJari);
+
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU LINGKARAN ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Luas");
+                System.out.println("3. Hitung Keliling");
+                System.out.println("4. Kembali");
+                System.out.print("Pilih menu (1-4): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + lingkaran.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Luas: " + lingkaran.hitungLuas());
+                        break;
+                    case 3:
+                        System.out.println("Keliling: " + lingkaran.hitungKeliling());
+                        break;
+                    case 4:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
         }
     }
 

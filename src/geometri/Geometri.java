@@ -1234,6 +1234,132 @@ public class Geometri {
             double jariJari = input.nextDouble();
             
             TemberengBola temberengBola = new TemberengBola(tinggi, jariJari);
+            
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU TEMBERENG BOLA ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Volume");
+                System.out.println("3. Hitung Luas Permukaan");
+                System.out.println("4. Hitung Luas Permukaan Melengkung");
+                System.out.println("5. Hitung Luas Bidang Potong");
+                System.out.println("6. Kembali");
+                System.out.print("Pilih menu (1-6): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + temberengBola.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Volume: " + temberengBola.hitungVolume());
+                        break;
+                    case 3:
+                        System.out.println("Luas Permukaan: " + temberengBola.hitungLuas());
+                        break;
+                    case 4:
+                        System.out.println("Luas Permukaan Melengkung: " + temberengBola.hitungLuasPermukaanMelengkung());
+                        break;
+                    case 5:
+                        System.out.println("Luas Bidang Potong: " + temberengBola.hitungLuasBidangPotong());
+                        break;
+                    case 6:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
+        }
+        else if(pilihan == 3) {
+            System.out.print("Masukkan alpha derajat: ");
+            double alphaDerajat = input.nextDouble();
+            System.out.print("Masukkan jari-jari: ");
+            double jariJari = input.nextDouble();
+            
+            JuringBola juringBola = new JuringBola(alphaDerajat, jariJari);
+            
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU JURING BOLA ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Volume");
+                System.out.println("3. Hitung Luas Permukaan");
+                System.out.println("4. Hitung Luas Permukaan Melengkung");
+                System.out.println("5. Hitung Luas Bidang Segitiga Kerucut");
+                System.out.println("6. Kembali");
+                System.out.print("Pilih menu (1-6): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + juringBola.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Volume: " + juringBola.hitungVolume());
+                        break;
+                    case 3:
+                        System.out.println("Luas Permukaan: " + juringBola.hitungLuas());
+                        break;
+                    case 4:
+                        System.out.println("Luas Permukaan Melengkung: " + juringBola.hitungLuasPermukaanMelengkung());
+                        break;
+                    case 5:
+                        System.out.println("Luas Bidang Segitiga Kerucut: " + juringBola.hitungLuasBidangSegitigaKerucut());
+                        break;
+                    case 6:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
+        }
+        else if(pilihan == 4) {
+            System.out.print("Masukkan jarak bidang potong bawah dari pusat bola: ");
+            double h1 = input.nextDouble();
+            System.out.print("Masukkan jarak bidang potong atas dari pusat bola: ");
+            double h2 = input.nextDouble();
+            System.out.print("Masukkan jari-jari: ");
+            double jariJari = input.nextDouble();
+            
+            CincinBola cincinBola = new CincinBola(h1, h2, jariJari);
+            
+            kembali = false;
+            while(!kembali) {
+                System.out.println("\n=== MENU JURING BOLA ===");
+                System.out.println("1. Tampilkan Nama");
+                System.out.println("2. Hitung Volume");
+                System.out.println("3. Hitung Luas Permukaan");
+                System.out.println("4. Hitung Jari Jari Alas Bawah");
+                System.out.println("5. Hitung Jari Jari Alas Atas");
+                System.out.println("6. Kembali");
+                System.out.print("Pilih menu (1-6): ");
+                int subPilihan = input.nextInt();
+
+                switch (subPilihan) {
+                    case 1:
+                        System.out.println("Nama: " + cincinBola.getNama());
+                        break;
+                    case 2:
+                        System.out.println("Volume: " + cincinBola.hitungVolume());
+                        break;
+                    case 3:
+                        System.out.println("Luas Permukaan: " + cincinBola.hitungLuas());
+                        break;
+                    case 4:
+                        System.out.println("Hitung Jari Jari Alas Bawah: " + cincinBola.hitungJariJariAlasBawah());
+                        break;
+                    case 5:
+                        System.out.println("Hitung Jari Jari Alas Atas: " + cincinBola.hitungJariJariAlasAtas());
+                        break;
+                    case 6:
+                        kembali = true;
+                        break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                }
+            }
         }
     }
 }

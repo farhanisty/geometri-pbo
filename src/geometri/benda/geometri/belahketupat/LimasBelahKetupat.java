@@ -1,6 +1,5 @@
 package geometri.benda.geometri.belahketupat;
 
-import geometri.benda.geometri.BangunDatar;
 import geometri.benda.geometri.BangunRuang;
 
 public class LimasBelahKetupat extends BelahKetupat implements BangunRuang {
@@ -36,6 +35,38 @@ public class LimasBelahKetupat extends BelahKetupat implements BangunRuang {
         double luasAlas = super.hitungLuas(diagonalSatu, diagonalDua);
         double luasSisiSamping = 4 * (0.5 *  sisi * tinggiSegitigaSisi);
         return luasAlas + luasSisiSamping;
+    }
+
+    public double getTinggiLimas() {
+        return tinggiLimas;
+    }
+
+    public void setTinggiLimas(double tinggiLimas) {
+        this.tinggiLimas = tinggiLimas;
+    }
+
+    public double getTinggiSegitigaSisi() {
+        return tinggiSegitigaSisi;
+    }
+
+    public void setTinggiSegitigaSisi(double tinggiSegitigaSisi) {
+        this.tinggiSegitigaSisi = tinggiSegitigaSisi;
+    }
+
+    public double getLuasPermukaan() {
+        return luasPermukaan;
+    }
+
+    public void setLuasPermukaan(double luasPermukaan) {
+        this.luasPermukaan = luasPermukaan;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(double volume) {
+        this.volume = volume;
     }
 
     @Override

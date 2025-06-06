@@ -1,10 +1,13 @@
 package geometri.benda.geometri.belahketupat;
 
 import geometri.benda.geometri.BangunDatar;
+import geometri.benda.geometri.BangunRuang;
 
-public class LimasBelahKetupat extends BelahKetupat {
-    public double tinggiLimas;
-    public double tinggiSegitigaSisi;
+public class LimasBelahKetupat extends BelahKetupat implements BangunRuang {
+    private double tinggiLimas;
+    private double tinggiSegitigaSisi;
+    private double luasPermukaan;
+    private double volume;
 
     public LimasBelahKetupat(double tinggiLimas, double sisi, double diagonalSatu, double diagonalDua, double tinggiSegitigaSisi) {
         super(sisi, diagonalSatu, diagonalDua);
@@ -12,15 +15,26 @@ public class LimasBelahKetupat extends BelahKetupat {
         this.tinggiSegitigaSisi = tinggiSegitigaSisi;
     }
 
-    public double hitungVolume() {
-        return super.hitungLuas() * this.tinggiLimas / 3;
-    }
-
-
     @Override
-    public double hitungLuas() {
-        double luasAlas = super.hitungLuas();
-        double luasSisiSamping = 4 * (0.5 * this.sisi * this.tinggiSegitigaSisi);
+    public double hitungVolume() {
+        this.volume = this.hitungVolume(tinggiLimas, diagonalSatu, diagonalDua);
+        return this.volume;
+    }
+    
+    public double hitungVolume(double tinggiLimas, double diagonalSatu, double diagonalDua) {
+        double luasAlas = super.hitungLuas(diagonalSatu, diagonalDua);
+        return luasAlas * tinggiLimas / 3;
+    }
+    
+    @Override
+    public double hitungLuasPermukaan() {
+        this.luasPermukaan = this.hitungLuasPermukaan(sisi, diagonalSatu, diagonalDua, tinggiSegitigaSisi);
+        return this.luasPermukaan;
+    }
+    
+    public double hitungLuasPermukaan(double sisi, double diagonalSatu, double diagonalDua, double tinggiSegitigaSisi) {
+        double luasAlas = super.hitungLuas(diagonalSatu, diagonalDua);
+        double luasSisiSamping = 4 * (0.5 *  sisi * tinggiSegitigaSisi);
         return luasAlas + luasSisiSamping;
     }
 
@@ -28,4 +42,5 @@ public class LimasBelahKetupat extends BelahKetupat {
     public String getNama() {
         return "Limas Belah Ketupat";
     }
+
 }

@@ -14,6 +14,8 @@ public class BelahKetupat extends BangunDatar {
     public double sisi;
     public double diagonalSatu;
     public double diagonalDua;
+    public double luas;
+    public double keliling;
     
     public BelahKetupat(double sisi, double diagonalSatu, double diagonalDua) {
         this.sisi = sisi;
@@ -23,12 +25,22 @@ public class BelahKetupat extends BangunDatar {
 
     @Override
     public double hitungLuas() {
-        return this.diagonalSatu * this.diagonalDua / 2;
+        this.luas = this.hitungLuas(this.diagonalDua, this.diagonalDua);
+        return this.luas;
+    }
+    
+    public double hitungLuas(double diagonalSatu, double diagonalDua) {
+        return diagonalSatu * diagonalDua / 2;
     }
 
     @Override
     public double hitungKeliling() {
-        return this.sisi * 4;
+        this.keliling = this.hitungKeliling(this.sisi);
+        return this.keliling;
+    }
+    
+    public double hitungKeliling(double sisi) {
+        return sisi * 4;
     }
 
     @Override

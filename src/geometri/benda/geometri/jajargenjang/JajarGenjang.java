@@ -14,6 +14,8 @@ public class JajarGenjang extends BangunDatar {
     public double sisiDatar;
     public double sisiMiring;
     public double tinggi;
+    public double luas;
+    public double keliling;
     
     public JajarGenjang(double sisiDatar, double sisiMiring, double tinggi) {
         this.sisiDatar = sisiDatar;
@@ -23,12 +25,22 @@ public class JajarGenjang extends BangunDatar {
     
     @Override
     public double hitungLuas() {
-        return this.sisiDatar * this.tinggi;
+        this.luas = this.hitungLuas(sisiDatar, tinggi);
+        return this.luas;
+    }
+    
+    public double hitungLuas(double sisiDatar, double tinggi) {
+        return sisiDatar * tinggi;
     }
 
     @Override
     public double hitungKeliling() {
-        return this.sisiDatar * 2 + this.sisiMiring * 2;
+        this.keliling = this.hitungKeliling(sisiDatar, sisiMiring);
+        return this.keliling;
+    }
+    
+    public double hitungKeliling(double sisiDatar, double sisiMiring) {
+        return sisiDatar * 2 + sisiMiring * 2;
     }
 
     @Override

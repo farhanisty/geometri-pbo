@@ -15,6 +15,8 @@ public class Segitiga extends BangunDatar {
     public double sisiDua;
     public double sisiAlas;
     public double tinggi;
+    public double luas;
+    public double keliling;
     
     public Segitiga(double sisiSatu, double sisiDua, double sisiAlas, double tinggi) {
         this.sisiSatu = sisiSatu;
@@ -25,11 +27,21 @@ public class Segitiga extends BangunDatar {
     
     @Override
     public double hitungLuas() {
-        return this.sisiAlas * this.tinggi / 2;
+        this.luas = this.hitungLuas(sisiAlas, tinggi);
+        return this.luas;
+    }
+    
+    public double hitungLuas(double sisiAlas, double tinggi) {
+        return sisiAlas * tinggi / 2;
     }
 
     @Override
     public double hitungKeliling() {
+        this.keliling = this.hitungKeliling(sisiSatu, sisiDua, sisiAlas);
+        return this.keliling;
+    }
+    
+    public double hitungKeliling(double sisiSatu, double sisiDua, double sisiAlas) {
         return this.sisiSatu + this.sisiDua + this.sisiAlas;
     }
 

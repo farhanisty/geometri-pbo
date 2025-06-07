@@ -13,6 +13,8 @@ import geometri.benda.geometri.BangunDatar;
 public class PersegiPanjang extends BangunDatar {
     public double sisiPendek;
     public double sisiPanjang;
+    public double luas;
+    public double keliling;
     
     public PersegiPanjang(double sisiPendek, double sisiPanjang) {
         this.sisiPendek = sisiPendek;
@@ -21,12 +23,22 @@ public class PersegiPanjang extends BangunDatar {
     
     @Override
     public double hitungLuas() {
-        return this.sisiPendek * this.sisiPanjang;
+        this.luas = this.hitungLuas(sisiPendek, sisiPanjang);
+        return this.luas;
+    }
+    
+    public double hitungLuas(double sisiPendek, double sisiPanjang) {
+        return sisiPendek * sisiPanjang;
     }
 
     @Override
     public double hitungKeliling() {
-        return this.sisiPendek * 2 + this.sisiPanjang * 2;
+        this.keliling = this.hitungKeliling(sisiPendek, sisiPanjang);
+        return this.keliling;
+    }
+    
+    public double hitungKeliling(double sisiPendek, double sisiPanjang) {
+        return sisiPendek * 2 + sisiPanjang * 2;
     }
 
     @Override

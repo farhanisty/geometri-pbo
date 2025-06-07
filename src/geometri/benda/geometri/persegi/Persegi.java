@@ -11,20 +11,32 @@ import geometri.benda.geometri.BangunDatar;
  * @author farhannivta
  */
 public class Persegi extends BangunDatar {
-
+    public double luas;
+    public double keliling;
     public double sisi;
     
     public Persegi(double sisi) {
         this.sisi = sisi;
     }
+    
     @Override
     public double hitungLuas() {
-        return this.sisi * this.sisi;
+        this.luas = this.hitungLuas(sisi);
+        return this.luas;
+    }
+    
+    public double hitungLuas(double sisi) {
+        return sisi * sisi;
     }
 
     @Override
     public double hitungKeliling() {
-        return this.sisi * 4;
+        this.keliling = this.hitungKeliling(sisi);
+        return this.keliling;
+    }
+    
+    public double hitungKeliling(double sisi) {
+        return sisi * 4;
     }
 
     @Override

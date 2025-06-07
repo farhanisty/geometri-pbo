@@ -16,6 +16,8 @@ public class Trapesium extends BangunDatar {
     public double sisiMiringSatu;
     public double sisiMiringDua;
     public double tinggi;
+    public double luas;
+    public double keliling;
     
     public Trapesium(double sisiAtas, double sisiAlas, double sisiMiringSatu, double sisiMiringDua, double tinggi) {
         this.sisiAlas = sisiAlas;
@@ -27,12 +29,22 @@ public class Trapesium extends BangunDatar {
     
     @Override
     public double hitungLuas() {
-        return (this.sisiAlas + this.sisiAtas) * this.tinggi / 2;
+        this.luas = this.hitungLuas(sisiAlas, sisiAtas, tinggi);
+        return this.luas;
+    }
+    
+    public double hitungLuas(double sisiAlas, double sisiAtas, double tinggi) {
+        return (sisiAlas + sisiAtas) * tinggi / 2;
     }
 
     @Override
     public double hitungKeliling() {
-        return this.sisiAlas + this.sisiMiringDua + this.sisiMiringSatu + this.sisiAtas;
+        this.keliling = this.hitungKeliling(sisiAtas, sisiAlas, sisiMiringSatu, sisiMiringDua);
+        return this.keliling;
+    }
+    
+    public double hitungKeliling(double sisiAtas, double sisiAlas, double sisiMiringSatu, double sisiMiringDua) {
+        return sisiAlas + sisiMiringDua + sisiMiringSatu + sisiAtas;
     }
 
     @Override

@@ -15,6 +15,8 @@ public class LayangLayang extends BangunDatar {
     public double diagonalDua;
     public double sisiPendek;
     public double sisiPanjang;
+    public double luas;
+    public double keliling;
     
     public LayangLayang(double diagonalSatu, double diagonalDua, double sisiPendek, double sisiPanjang) {
         this.diagonalSatu = diagonalSatu;
@@ -25,12 +27,22 @@ public class LayangLayang extends BangunDatar {
 
     @Override
     public double hitungLuas() {
-        return this.diagonalSatu * this.diagonalDua / 2;
+        this.luas = this.hitungLuas(diagonalSatu, diagonalDua);
+        return this.luas;
+    }
+    
+    public double hitungLuas(double diagonalSatu, double diagonalDua) {
+        return diagonalSatu * diagonalDua / 2;
     }
 
     @Override
     public double hitungKeliling() {
-        return this.sisiPendek * 2 + this.sisiPanjang * 2;
+        this.keliling = this.hitungKeliling(sisiPendek, sisiPanjang);
+        return this.keliling;
+    }
+    
+    public double hitungKeliling(double sisiPendek, double sisiPanjang) {
+        return sisiPendek * 2 + sisiPanjang * 2;
     }
 
     @Override
